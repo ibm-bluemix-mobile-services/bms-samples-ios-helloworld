@@ -4,7 +4,7 @@ The HelloWorld sample contains Objective-C and Swift projects that you can use t
 ### Downloading the samples
 Clone the samples from IBM DevOps Services with the following command:
 
-git clone https://hub.jazz.net/git/mobilecloud/imf-helloWorld
+git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-helloworld
 
 Select the Swift or Objective-C version of the helloWorld App:
 
@@ -13,7 +13,7 @@ Select the Swift or Objective-C version of the helloWorld App:
 - helloWorld_swift
 
 ### Configure the front end in the HelloWorld sample
-1. In a terminal, navigate to the imf-helloWorld directory where the project was cloned
+1. In a terminal, navigate to the bms-samples-ios-helloworld directory where the project was cloned
 2. Navigate to the helloWorld_objective_c or helloWorld_swift directory
 3. Open the Xcode workspace: `open helloWorld.xcworkspace`.
 4. Open the AppDelegate (AppDelegate.m or AppDelegate.swift) and add the corresponding ApplicationRoute and
