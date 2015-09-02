@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="helloWorld_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oR-yI-bTG">
+                                <rect key="frame" x="197" y="460" width="207" height="35"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.69803921570000005" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="3KI-6T-AMt"/>
+                                    <constraint firstAttribute="width" constant="207" id="CKV-pq-ElR"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="PING BLUEMIX">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testBluemixConnection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fPo-Gj-PGA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F3o-R2-qCQ">
+                                <rect key="frame" x="124" y="145" width="352" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Qt1-cB-rqY"/>
+                                    <constraint firstAttribute="width" constant="352" id="azn-kb-wrT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hV8-Bw-BaA">
+                                <rect key="frame" x="124" y="202" width="352" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dn4-Rh-hFl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xVu-eI-4C5">
+                                <rect key="frame" x="150" y="240" width="300" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="Dvh-aj-Qke"/>
+                                    <constraint firstAttribute="width" constant="300" id="HH5-T2-fT3"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960780000001" green="0.20392156859999999" blue="0.2470588235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xVu-eI-4C5" firstAttribute="top" secondItem="hV8-Bw-BaA" secondAttribute="bottom" constant="8" symbolic="YES" id="2OX-N7-km5"/>
+                            <constraint firstItem="hV8-Bw-BaA" firstAttribute="top" secondItem="F3o-R2-qCQ" secondAttribute="bottom" constant="8" symbolic="YES" id="3uY-tA-MOV"/>
+                            <constraint firstItem="F3o-R2-qCQ" firstAttribute="centerX" secondItem="7oR-yI-bTG" secondAttribute="centerX" id="4w9-Ca-xM8"/>
+                            <constraint firstItem="F3o-R2-qCQ" firstAttribute="leading" secondItem="hV8-Bw-BaA" secondAttribute="leading" id="NCx-kh-kiY"/>
+                            <constraint firstItem="xVu-eI-4C5" firstAttribute="centerX" secondItem="hV8-Bw-BaA" secondAttribute="centerX" id="TM0-As-m7y"/>
+                            <constraint firstItem="F3o-R2-qCQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="125" id="VDU-tz-yg0"/>
+                            <constraint firstItem="F3o-R2-qCQ" firstAttribute="trailing" secondItem="hV8-Bw-BaA" secondAttribute="trailing" id="cyT-Ea-XLV"/>
+                            <constraint firstAttribute="centerX" secondItem="7oR-yI-bTG" secondAttribute="centerX" id="jca-u2-isI"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7oR-yI-bTG" secondAttribute="bottom" constant="105" id="s0T-tu-Ffu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomLabel" destination="hV8-Bw-BaA" id="6ew-D0-7HC"/>
+                        <outlet property="errorTextView" destination="xVu-eI-4C5" id="bQE-dd-nNH"/>
+                        <outlet property="pingButton" destination="7oR-yI-bTG" id="gP0-TW-g7K"/>
+                        <outlet property="topLabel" destination="F3o-R2-qCQ" id="OA4-wF-LB4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

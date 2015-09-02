@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ztL-97-gYC">
+                                <rect key="frame" x="124" y="187" width="352" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="L5H-eG-Hdy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWy-CC-dtx">
+                                <rect key="frame" x="124" y="130" width="352" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="1yH-NX-Ul2"/>
+                                    <constraint firstAttribute="width" constant="352" id="Lzb-bf-cey"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpf-3g-dAH">
+                                <rect key="frame" x="197" y="465" width="207" height="35"/>
+                                <color key="backgroundColor" red="0.10980392160000001" green="0.69803921570000005" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="207" id="SqZ-eC-1KK"/>
+                                    <constraint firstAttribute="height" constant="35" id="ijv-lV-80I"/>
+                                </constraints>
+                                <state key="normal" title="PING BLUEMIX">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="testBluemixConnection:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yoK-Ok-HJn"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b70-JP-FN6">
+                                <rect key="frame" x="150" y="225" width="300" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="68h-9L-yPE"/>
+                                    <constraint firstAttribute="height" constant="85" id="b3o-jM-u5J"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.14901960784313725" green="0.20392156862745098" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="ztL-97-gYC" secondAttribute="centerX" id="6PM-Wg-qpx"/>
+                            <constraint firstAttribute="centerX" secondItem="WWy-CC-dtx" secondAttribute="centerX" id="TeZ-Q3-35G"/>
+                            <constraint firstItem="WWy-CC-dtx" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="110" id="XPO-MY-3o9"/>
+                            <constraint firstItem="b70-JP-FN6" firstAttribute="top" secondItem="ztL-97-gYC" secondAttribute="bottom" constant="8" symbolic="YES" id="Zd0-Vy-BcV"/>
+                            <constraint firstItem="b70-JP-FN6" firstAttribute="centerX" secondItem="ztL-97-gYC" secondAttribute="centerX" id="ede-jA-kA1"/>
+                            <constraint firstItem="WWy-CC-dtx" firstAttribute="leading" secondItem="ztL-97-gYC" secondAttribute="leading" id="rbY-ar-3WC"/>
+                            <constraint firstItem="jpf-3g-dAH" firstAttribute="centerX" secondItem="ztL-97-gYC" secondAttribute="centerX" id="sGn-3W-Vtk"/>
+                            <constraint firstItem="ztL-97-gYC" firstAttribute="top" secondItem="WWy-CC-dtx" secondAttribute="bottom" constant="8" symbolic="YES" id="vnC-Mr-YKZ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jpf-3g-dAH" secondAttribute="bottom" constant="100" id="ytt-9E-meg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomLabel" destination="ztL-97-gYC" id="zo4-WS-Dkt"/>
+                        <outlet property="errorTextView" destination="b70-JP-FN6" id="TMU-Yv-Q8L"/>
+                        <outlet property="pingButton" destination="jpf-3g-dAH" id="QGi-I7-bHz"/>
+                        <outlet property="topLabel" destination="WWy-CC-dtx" id="aYE-Tk-ZgO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</document>
