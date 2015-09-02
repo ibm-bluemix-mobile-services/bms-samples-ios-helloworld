@@ -1,0 +1,10 @@
+PODS:
+  - IMFCore (1.0.0)
+
+DEPENDENCIES:
+  - IMFCore
+
+SPEC CHECKSUMS:
+  IMFCore: 658ca8f27f1dade28abe6dcb263969d382a71da7
+
+COCOAPODS: 0.37.0.rc.1
