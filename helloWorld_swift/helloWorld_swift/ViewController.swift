@@ -55,7 +55,7 @@ class ViewController: UIViewController {
             self.topLabel.text = "Bummer"
             self.bottomLabel.text = "Something Went Wrong"
             if (!error.localizedDescription.isEmpty){
-                var errorMsg =  error.localizedDescription + " Please verify the Bundle Identifier, Bundle Version, ApplicationRoute and ApplicationID"
+                let errorMsg =  error.localizedDescription + " Please verify the Bundle Identifier, Bundle Version, ApplicationRoute and ApplicationID"
                 self.errorTextView.text = errorMsg
             }
             else{
