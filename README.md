@@ -55,7 +55,9 @@ You will see a single view application with a "PING BLUEMIX" button. When you cl
 
 An IMFLogger instance has also been configured in the ViewController in order to send a "Testing the connection to Bluemix" message to the Monitoring Dashboard on Bluemix. This requires an AMA instance to be installed in your Bluemix application. The log level is currently set to INFO, but you can change the level in the ViewController. 
 
-Note: This application has been built to run on the latest version of XCode (7.0) as well as the latest version of Swift (2.0)
+Note: This application has been built to run on the latest version of XCode (7.0) as well as the latest version of Swift (2.0). Also the application has updated to allow "NSAllowsArbitraryLoads" for NSAppTransportSecurity as a workaround for the Application Transport Security settings introduced in iOS 9. For more info please see the following blog:
+
+    [Connect Your iOS 9 App to Bluemix](https://developer.ibm.com/bluemix/2015/09/16/connect-your-ios-9-app-to-bluemix/)
 
 ### License
 This package contains sample code provided in source code form. The samples are licensed under the under the Apache License, Version 2.0 (the "License"). You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 and may also view the license in the license.txt file within this package. Also see the notices.txt file within this package for additional notices.
