@@ -55,11 +55,11 @@ class ViewController: UIViewController {
             self.topLabel.text = "Bummer"
             self.bottomLabel.text = "Something Went Wrong"
             if (!error.localizedDescription.isEmpty){
-                let errorMsg =  error.localizedDescription + " Please verify the Bundle Identifier, Bundle Version, ApplicationRoute and ApplicationID"
+                let errorMsg =  error.localizedDescription + " Please verify the ApplicationRoute and ApplicationID"
                 self.errorTextView.text = errorMsg
             }
             else{
-                 self.errorTextView.text = "Please verify the Bundle Identifier, Bundle Version, ApplicationRoute and ApplicationID"
+                 self.errorTextView.text = "Please verify the ApplicationRoute and ApplicationID"
             }
         }
         self.pingButton.backgroundColor=UIColor (red:28.0/255.0, green:178.0/255.0, blue:153.0/255.0, alpha:1)

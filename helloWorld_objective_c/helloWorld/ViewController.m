@@ -61,7 +61,7 @@
             _topLabel.text = @"Bummer";
             _bottomLabel.text = @"Something Went Wrong";
             if (error.localizedDescription!=nil){
-                NSString *errorMsg =  [NSString stringWithFormat: @"%@ Please verify the Bundle Identifier, Bundle Version, ApplicationRoute and ApplicationID.", error.localizedDescription];
+                NSString *errorMsg =  [NSString stringWithFormat: @"%@ Please verify the ApplicationRoute and ApplicationID.", error.localizedDescription];
                 _errorTextView.text = errorMsg;
             }
         }

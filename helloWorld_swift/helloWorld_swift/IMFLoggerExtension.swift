@@ -79,7 +79,7 @@ extension IMFLogger {
 
 //Swift IMFLogger Macro Alternatives
 
-private func _metadataDictionary(file:String, fn:String, line:Int) -> Dictionary<String, String> {
+private func _metadataDictionary(file:NSString, fn:String, line:Int) -> Dictionary<String, String> {
     return [
         KEY_METADATA_METHOD : fn,
         KEY_METADATA_FILE : file.lastPathComponent,
