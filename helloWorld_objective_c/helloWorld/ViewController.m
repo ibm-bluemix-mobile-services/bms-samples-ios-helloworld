@@ -38,25 +38,15 @@
 -(IBAction)testBluemixConnection:(id)sender{
 
     _pingButton.backgroundColor =[UIColor colorWithRed:0.0/255.0 green:174.0/255.0 blue:211.0/255.0 alpha:1];
-    
-    //Logging is currently set to Info level. You can set the level below based on how much output you want to see:
-    IMFLogger *logger=[IMFLogger loggerForName:@"helloWorld"];
-    [IMFLogger setLogLevel:IMFLogLevelInfo];
-    [logger logInfoWithMessages:@"Testing connection to Bluemix"];
-  
-    
-    //Testing the connection to Bluemix by attempting to obatain authorization header from MCA. This test will also ensure the correct ApplicationRoute and ApplicationID have been set.
-    IMFAuthorizationManager *authManager = [IMFAuthorizationManager sharedInstance];
-    [authManager obtainAuthorizationHeaderWithCompletionHandler:^(IMFResponse *response, NSError *error) {
-        if (error==nil)
-        {
-            NSLog(@"You have connected to Bluemix successfully");
-            _topLabel.text = @"Yay!";
-            _bottomLabel.text = @"You Are Connected";
-            _errorTextView.text = @"";
-            
-        } else
-        {
+
+
+    ///Testing the connection to Bluemix by sending a Get request to a protected resource in the Node.js application. This Node.js code was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
+    IMFClient *imfClient = [IMFClient sharedInstance];
+    NSString *protectedURL = [NSString stringWithFormat:@"%@/protected",imfClient.backendRoute];
+    IMFResourceRequest* request = [IMFResourceRequest requestWithPath:protectedURL];
+    [request setHTTPMethod:@"GET"];
+    [request sendWithCompletionHandler:^(IMFResponse *response, NSError *error) {
+        if (error != nil) {
             NSLog(@"%@",error);
             _topLabel.text = @"Bummer";
             _bottomLabel.text = @"Something Went Wrong";
@@ -64,10 +54,14 @@
                 NSString *errorMsg =  [NSString stringWithFormat: @"%@ Please verify the ApplicationRoute and ApplicationID.", error.localizedDescription];
                 _errorTextView.text = errorMsg;
             }
-        }
-        _pingButton.backgroundColor=[UIColor colorWithRed:28.0/255.0 green:178.0/255.0 blue:153.0/255.0 alpha:1];
-
-     }];
-    [IMFLogger send];
-}
+        } else {
+            NSLog(@"You have connected to Bluemix successfully");
+            _topLabel.text = @"Yay!";
+            _bottomLabel.text = @"You Are Connected";
+            _errorTextView.text = @"";
+            
+            }
+         _pingButton.backgroundColor=[UIColor colorWithRed:28.0/255.0 green:178.0/255.0 blue:153.0/255.0 alpha:1];
+    }];
+    }
 @end

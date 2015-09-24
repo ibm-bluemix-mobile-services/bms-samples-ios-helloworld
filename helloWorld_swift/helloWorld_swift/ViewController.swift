@@ -33,39 +33,36 @@ class ViewController: UIViewController {
     @IBAction func testBluemixConnection(sender: AnyObject) {
         self.pingButton.backgroundColor=UIColor (red:0.0/255.0, green:174.0/255.0, blue:211.0/255.0, alpha:1)
         
-        //Logging is currently set to Info level. You can set the level below based on how much output you want to see:
-        let logger = IMFLogger(forName:"helloWorld")
-        IMFLogger.setLogLevel(IMFLogLevel.Info)
-        logger.logInfoWithMessages("Testing connection to Bluemix")
+        //Testing the connection to Bluemix by sending a Get request to a protected resource in the Node.js application. This Node.js code was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
         
-        //Testing the connection to Bluemix by attempting to obatain authorization header from MCA. This test will also ensure the correct ApplicationRoute and ApplicationID have been set.
-        let authManager = IMFAuthorizationManager.sharedInstance()
-        authManager.obtainAuthorizationHeaderWithCompletionHandler { (response:IMFResponse!, error:NSError!) -> Void in
-        if (error == nil)
-        {
-            NSLog("You have connected to Bluemix successfully")
-            self.topLabel.text = "Yay!"
-            self.bottomLabel.text = "You Are Connected"
-            self.errorTextView.text = ""
+        let imfClient = IMFClient.sharedInstance()
+        let request = IMFResourceRequest(path: imfClient.backendRoute + "/protected")
+        request.setHTTPMethod("GET")
+        request.sendWithCompletionHandler { (response, error ) -> Void in
+            if error != nil {
+                NSLog("%@",error);
+                self.topLabel.text = "Bummer"
+                self.bottomLabel.text = "Something Went Wrong"
+                if (!error.localizedDescription.isEmpty){
+                    let errorMsg =  error.localizedDescription + " Please verify the ApplicationRoute and ApplicationID"
+                    self.errorTextView.text = errorMsg
+                }
+                else{
+                    self.errorTextView.text = "Please verify the ApplicationRoute and ApplicationID"
+                }
+
+            }
+            else {
+                NSLog("You have connected to Bluemix successfully")
+                self.topLabel.text = "Yay!"
+                self.bottomLabel.text = "You Are Connected"
+                self.errorTextView.text = ""
+                self.pingButton.backgroundColor=UIColor (red:28.0/255.0, green:178.0/255.0, blue:153.0/255.0, alpha:1)
+            }
             self.pingButton.backgroundColor=UIColor (red:28.0/255.0, green:178.0/255.0, blue:153.0/255.0, alpha:1)
-            
-        } else
-        {
-            NSLog("%@",error);
-            self.topLabel.text = "Bummer"
-            self.bottomLabel.text = "Something Went Wrong"
-            if (!error.localizedDescription.isEmpty){
-                let errorMsg =  error.localizedDescription + " Please verify the ApplicationRoute and ApplicationID"
-                self.errorTextView.text = errorMsg
-            }
-            else{
-                 self.errorTextView.text = "Please verify the ApplicationRoute and ApplicationID"
-            }
         }
-        self.pingButton.backgroundColor=UIColor (red:28.0/255.0, green:178.0/255.0, blue:153.0/255.0, alpha:1)
-        }
-        IMFLogger.send()
-    }
+        
+            }
     }
 
 

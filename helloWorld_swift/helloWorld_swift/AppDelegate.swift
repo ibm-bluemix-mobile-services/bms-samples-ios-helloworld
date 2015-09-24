@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //TODO: Please Enter a valid ApplicationRoute for initializaWithBackendRoute and a valid ApplicationId for backenGUID
         //Example:
         //IMFClient.sharedInstance().initializeWithBackendRoute("<APPLICATION_ROUTE>", backendGUID: "<APPLICATION_ID>")
-
+        
         return true
     }
 
