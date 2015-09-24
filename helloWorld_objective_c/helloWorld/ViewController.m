@@ -45,7 +45,7 @@
     [logger logInfoWithMessages:@"Testing connection to Bluemix"];
   
     
-    //Testing the connection to Bluemix by attempting to obatain authorization header from AMA. This test will also ensure the correct Bundle Identifier, Bundle Version, ApplicationRoute and ApplicationID have been set.
+    //Testing the connection to Bluemix by attempting to obatain authorization header from MCA. This test will also ensure the correct ApplicationRoute and ApplicationID have been set.
     IMFAuthorizationManager *authManager = [IMFAuthorizationManager sharedInstance];
     [authManager obtainAuthorizationHeaderWithCompletionHandler:^(IMFResponse *response, NSError *error) {
         if (error==nil)
