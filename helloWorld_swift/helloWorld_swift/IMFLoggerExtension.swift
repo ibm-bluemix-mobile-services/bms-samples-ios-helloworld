@@ -79,7 +79,7 @@ extension IMFLogger {
 
 //Swift IMFLogger Macro Alternatives
 
-private func _metadataDictionary(file:String, fn:String, line:Int) -> Dictionary<String, String> {
+private func _metadataDictionary(file:NSString, fn:String, line:Int) -> Dictionary<String, String> {
     return [
         KEY_METADATA_METHOD : fn,
         KEY_METADATA_FILE : file.lastPathComponent,
@@ -88,30 +88,30 @@ private func _metadataDictionary(file:String, fn:String, line:Int) -> Dictionary
     ];
 }
 
-public func IMFLogTrace(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, #args: CVarArgType...) {
-    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Trace, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn, line));
+public func IMFLogTrace(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, args: CVarArgType...) {
+    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Trace, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn: fn, line: line));
 }
 
-public func IMFLogDebug(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, #args: CVarArgType...) {
-    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Debug, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn, line));
+public func IMFLogDebug(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, args: CVarArgType...) {
+    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Debug, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn: fn, line: line));
 }
 
-public func IMFLogInfo(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, #args: CVarArgType...) {
-    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Info, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn, line));
+public func IMFLogInfo(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, args: CVarArgType...) {
+    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Info, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn: fn, line: line));
 }
 
-public func IMFLogWarn(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, #args: CVarArgType...) {
-    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Warn, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn, line));
+public func IMFLogWarn(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, args: CVarArgType...) {
+    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Warn, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn: fn, line: line));
 }
 
-public func IMFLogError(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, #args: CVarArgType...) {
-    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Error, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn, line));
+public func IMFLogError(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, args: CVarArgType...) {
+    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Error, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn: fn, line: line));
 }
 
-public func IMFLogFatal(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, #args: CVarArgType...) {
-    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Fatal, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn, line));
+public func IMFLogFatal(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, args: CVarArgType...) {
+    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Fatal, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn: fn, line: line));
 }
 
-public func IMFLogAnalytics(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, #args: CVarArgType...) {
-    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Fatal, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn, line));
+public func IMFLogAnalytics(message:String, package:String = IMF_NAME, file: String = __FILE__, fn: String = __FUNCTION__, line: Int = __LINE__, args: CVarArgType...) {
+    IMFLogger(forName:package).logWithLevel(IMFLogLevel.Fatal, message: message, args:getVaList(args), userInfo: _metadataDictionary(file, fn: fn, line: line));
 }

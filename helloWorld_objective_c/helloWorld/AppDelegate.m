@@ -29,7 +29,6 @@
     //Example:
     //IMFClient *imfClient = [IMFClient sharedInstance];
     //[imfClient initializeWithBackendRoute:@"<APPLICATION_ROUTE>" backendGUID:@"<APPLICATION_ID>"];
-
        return YES;
 }
 
