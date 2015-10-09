@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         //Testing the connection to Bluemix by sending a Get request to a protected resource in the Node.js application. This Node.js code was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
         
         let imfClient = IMFClient.sharedInstance()
-        let request = IMFResourceRequest(path: imfClient.backendRoute + "/protected")
+        let request = IMFResourceRequest(path: imfClient.backendRoute)
         request.setHTTPMethod("GET")
         request.sendWithCompletionHandler { (response, error ) -> Void in
             if error != nil {

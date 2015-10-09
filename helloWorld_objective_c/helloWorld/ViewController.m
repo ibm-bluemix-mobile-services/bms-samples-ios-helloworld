@@ -42,7 +42,7 @@
 
     ///Testing the connection to Bluemix by sending a Get request to a protected resource in the Node.js application. This Node.js code was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
     IMFClient *imfClient = [IMFClient sharedInstance];
-    NSString *protectedURL = [NSString stringWithFormat:@"%@/protected",imfClient.backendRoute];
+    NSString *protectedURL = [NSString stringWithFormat:@"%@",imfClient.backendRoute];
     IMFResourceRequest* request = [IMFResourceRequest requestWithPath:protectedURL];
     [request setHTTPMethod:@"GET"];
     [request sendWithCompletionHandler:^(IMFResponse *response, NSError *error) {
