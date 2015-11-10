@@ -31,14 +31,14 @@ class ViewController: UIViewController {
     }
 
     @IBAction func testBluemixConnection(sender: AnyObject) {
-        self.pingButton.backgroundColor=UIColor (red:0.0/255.0, green:174.0/255.0, blue:211.0/255.0, alpha:1)
         
-        //Testing the connection to Bluemix by sending a Get request to a protected resource in the Node.js application. This Node.js code was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
+        //Testing the connection to Bluemix by sending a Get request to  the Node.js application. This Node.js piece was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
         
         let imfClient = IMFClient.sharedInstance()
         let request = IMFResourceRequest(path: imfClient.backendRoute)
         request.setHTTPMethod("GET")
         request.sendWithCompletionHandler { (response, error ) -> Void in
+            
             if error != nil {
                 NSLog("%@",error);
                 self.topLabel.text = "Bummer"
@@ -57,10 +57,8 @@ class ViewController: UIViewController {
                 self.topLabel.text = "Yay!"
                 self.bottomLabel.text = "You Are Connected"
                 self.errorTextView.text = ""
-                self.pingButton.backgroundColor=UIColor (red:28.0/255.0, green:178.0/255.0, blue:153.0/255.0, alpha:1)
             }
-            self.pingButton.backgroundColor=UIColor (red:28.0/255.0, green:178.0/255.0, blue:153.0/255.0, alpha:1)
-        }
+                   }
         
             }
     }
