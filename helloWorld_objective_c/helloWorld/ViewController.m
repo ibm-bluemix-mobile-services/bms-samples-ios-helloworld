@@ -37,15 +37,13 @@
 
 -(IBAction)testBluemixConnection:(id)sender{
 
-    _pingButton.backgroundColor =[UIColor colorWithRed:0.0/255.0 green:174.0/255.0 blue:211.0/255.0 alpha:1];
-
-
-    ///Testing the connection to Bluemix by sending a Get request to a protected resource in the Node.js application. This Node.js code was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
+    ///Testing the connection to Bluemix by sending a Get request to the Node.js application. This Node.js piece was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
     IMFClient *imfClient = [IMFClient sharedInstance];
-    NSString *protectedURL = [NSString stringWithFormat:@"%@",imfClient.backendRoute];
-    IMFResourceRequest* request = [IMFResourceRequest requestWithPath:protectedURL];
+    NSString *backendURL = [NSString stringWithFormat:@"%@",imfClient.backendRoute];
+    IMFResourceRequest* request = [IMFResourceRequest requestWithPath:backendURL];
     [request setHTTPMethod:@"GET"];
     [request sendWithCompletionHandler:^(IMFResponse *response, NSError *error) {
+        
         if (error != nil) {
             NSLog(@"%@",error);
             _topLabel.text = @"Bummer";
@@ -54,6 +52,7 @@
                 NSString *errorMsg =  [NSString stringWithFormat: @"%@ Please verify the ApplicationRoute and ApplicationID.", error.localizedDescription];
                 _errorTextView.text = errorMsg;
             }
+            
         } else {
             NSLog(@"You have connected to Bluemix successfully");
             _topLabel.text = @"Yay!";
@@ -61,7 +60,6 @@
             _errorTextView.text = @"";
             
             }
-         _pingButton.backgroundColor=[UIColor colorWithRed:28.0/255.0 green:178.0/255.0 blue:153.0/255.0 alpha:1];
     }];
     }
 @end
