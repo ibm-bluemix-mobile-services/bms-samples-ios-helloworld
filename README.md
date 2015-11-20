@@ -2,7 +2,7 @@
 ---
 The HelloWorld sample contains Objective-C and Swift projects that you can use to learn.  
 ### Downloading the samples
-Clone the samples from IBM DevOps Services with the following command:
+Clone the samples from Github with the following command:
 
 git clone https://github.com/ibm-bluemix-mobile-services/bms-samples-ios-helloworld
 
