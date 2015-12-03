@@ -2,7 +2,7 @@
 ---
 This helloWorld sample contains Objective-C and Swift projects that you can use to learn more about Bluemix Mobile Services.
 
-Use the following steps to configure the helloPush sample for Objective-C:
+Use the following steps to configure the helloWorld sample for Objective-C:
 
 1. [Download the helloWorld sample](#download-the-helloworld-sample)
 2. [Configure the mobile backend for your helloWorld application](#configure-the-mobile-backend-for-your-helloworld-application)
