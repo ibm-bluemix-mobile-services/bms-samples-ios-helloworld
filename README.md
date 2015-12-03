@@ -30,8 +30,8 @@ Before you can run the helloWorld application, you must set up an app on Bluemix
 
 Create a mobile backend in the  Bluemix dashboard:
 
-1.	In the Boilerplates section of the Bluemix catalog, click MobileFirst Services Starter.
-2.	Enter a name and host for your mobile backend and click Create.
+1.	In the **Boilerplates** section of the Bluemix catalog, click **MobileFirst Services Starter**.
+2.	Enter a name and host for your mobile backend and click **Create**.
 3.	Click **Finish**.
 
 ### Configure the front end in the HelloWorld sample
