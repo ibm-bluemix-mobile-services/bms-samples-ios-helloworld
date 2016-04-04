@@ -15,8 +15,8 @@
 #import "ViewController.h"
 #import <IMFCore/IMFCore.h>
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *topLabel;
-@property (weak, nonatomic) IBOutlet UILabel *bottomLabel;
+@property (weak, nonatomic) IBOutlet UILabel *topLabel; //Title label
+@property (weak, nonatomic) IBOutlet UILabel *bottomLabel; //Label to show connection
 @property (weak, nonatomic) IBOutlet UIButton *pingButton;
 @property (weak, nonatomic) IBOutlet UITextView *errorTextView;
 
@@ -35,14 +35,16 @@
 }
 
 -(IBAction)testBluemixConnection:(id)sender{
-
-    ///Testing the connection to Bluemix by sending a Get request to the Node.js application. This Node.js piece was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
+    
+    //Testing the connection to Bluemix by sending a Get request to the Node.js application. This Node.js piece was provided in the MobileFirst Services Starter boilerplate. The below request uses the applicationRoute that was provided when initializing the IMFClient in the AppDelegate.
     IMFClient *imfClient = [IMFClient sharedInstance];
+    //URL we are attempting to access which is the Bluemix Backend URL
     NSString *backendURL = [NSString stringWithFormat:@"%@",imfClient.backendRoute];
     IMFResourceRequest* request = [IMFResourceRequest requestWithPath:backendURL];
     [request setHTTPMethod:@"GET"];
+    //Sending GET request to backend URL
     [request sendWithCompletionHandler:^(IMFResponse *response, NSError *error) {
-        
+        //Handle Connection Error
         if (error != nil) {
             NSLog(@"%@",error);
             _topLabel.text = @"Bummer";
@@ -51,14 +53,14 @@
                 NSString *errorMsg =  [NSString stringWithFormat: @"%@ Please verify the ApplicationRoute and ApplicationID.", error.localizedDescription];
                 _errorTextView.text = errorMsg;
             }
-            
+            //Handle Successful Connection
         } else {
             NSLog(@"You have connected to Bluemix successfully");
             _topLabel.text = @"Yay!";
             _bottomLabel.text = @"You Are Connected";
             _errorTextView.text = @"";
             
-            }
+        }
     }];
-    }
+}
 @end
