@@ -15,10 +15,10 @@
 #import "ViewController.h"
 #import <IMFCore/IMFCore.h>
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *topLabel; //Title label
-@property (weak, nonatomic) IBOutlet UILabel *bottomLabel; //Label to show connection
-@property (weak, nonatomic) IBOutlet UIButton *pingButton;
-@property (weak, nonatomic) IBOutlet UITextView *errorTextView;
+@property (weak, nonatomic) IBOutlet UILabel *topLabel; //Title Text
+@property (weak, nonatomic) IBOutlet UILabel *bottomLabel; //Connection Status
+@property (weak, nonatomic) IBOutlet UIButton *pingButton;//Ping Bluemix Button
+@property (weak, nonatomic) IBOutlet UITextView *errorTextView; //Show connection error information
 
 @end
 
@@ -53,7 +53,7 @@
                 NSString *errorMsg =  [NSString stringWithFormat: @"%@ Please verify the ApplicationRoute and ApplicationID.", error.localizedDescription];
                 _errorTextView.text = errorMsg;
             }
-            //Handle Successful Connection
+        //Handle Successful Connection
         } else {
             NSLog(@"You have connected to Bluemix successfully");
             _topLabel.text = @"Yay!";
