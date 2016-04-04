@@ -34,7 +34,7 @@
     // https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html
     
     IMFClient *imfClient = [IMFClient sharedInstance];
-    [imfClient initializeWithBackendRoute:@"<APPLICATION_ROUTE"> backendGUID:@"<APPLICATION_ID>"];
+    [imfClient initializeWithBackendRoute:@"<APPLICATION_ROUTE>" backendGUID:@"<APPLICATION_ID>"];
     
     return YES;
 
