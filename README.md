@@ -1,5 +1,9 @@
 # iOS helloWorld Sample Application for Bluemix Mobile Services
 ---
+
+> **ATTENTION:** This sample has been deprecated and is no longer supported. Please visit [Bluemix Mobile](https://console.ng.bluemix.net/mobile/create-project/) and choose a starter to add Push, Analytics, and Authentication capabilities to download and start coding with a working project.
+
+
 This helloWorld sample contains Objective-C and Swift projects that you can use to learn more about Bluemix Mobile Services.
 
 Use the following steps to configure the helloWorld sample for Objective-C:
